@@ -12,3 +12,5 @@ class Film
     @title = options['title']
     @price = options['price']
   end
+
+end
