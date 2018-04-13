@@ -11,6 +11,7 @@ class Customer
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @funds = options['funds'].to_i
+    @ticket_count = 0
   end
 
   def save()
@@ -47,6 +48,19 @@ class Customer
     values = [@id]
     films = SqlRunner.run(sql, values)
     return films.map {|film| Film.new(film)}
+  end
+
+  def ticket_count
+    return @ticket_count
+  end
+
+  def buy_ticket(film)
+    if @funds >= film.price
+      @funds -= film.price
+      @ticket_count += 1
+    else
+      return "You can't afford a ticket."
+    end
   end
 
 end
