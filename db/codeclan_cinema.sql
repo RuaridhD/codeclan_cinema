@@ -25,4 +25,7 @@ CREATE TABLE screenings (
   id SERIAL8 PRIMARY KEY,
   title VARCHAR(255),
   showing VARCHAR(255),
+  tickets_sold INT,
+  film_id INT8 REFERENCES films(id) ON DELETE CASCADE,
+  ticket_id INT8 REFERENCES tickets(id) ON DELETE CASCADE
 );

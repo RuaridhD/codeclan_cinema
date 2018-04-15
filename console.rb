@@ -28,10 +28,13 @@ ticket2.save()
 ticket3 = Ticket.new({'customer_id' => customer2.id, 'film_id' => film1.id})
 ticket3.save()
 
-screening1 = Screening.new({'title' => film1.title, 'showing' => '15/04/18 21:00'})
+screening1 = Screening.new({'title' => film1.title, 'showing' => '15/04/18 21:00', 'tickets_sold' => 0})
 screening1.save()
-screening2 = Screening.new({'title' => film2.title, 'showing' => '15/04/18 19:30'})
+screening2 = Screening.new({'title' => film2.title, 'showing' => '15/04/18 19:30', 'tickets_sold' => 0})
 screening2.save()
+screening3 = Screening.new({'title' => film1.title, 'showing' => '15/04/18 19:00', 'tickets_sold' => 0})
+screening3.save()
+
 
 binding.pry
 nil
